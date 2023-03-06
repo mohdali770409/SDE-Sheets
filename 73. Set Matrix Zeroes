@@ -1,0 +1,33 @@
+    
+    //take a matrix where we will store our ans
+    //traverse the matrix and if found 0 then make ans matrix 0 rows and columns.
+    //for making rows and columns as 0 we need another loop.
+    void setZeroes(vector<vector<int>>& matrix) {
+        vector <vector<int>> ans = matrix;
+        int m= matrix.size();
+        int n = matrix[0].size();
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(matrix[i][j]==0){
+                    for(int k=0;k<n;k++) ans[i][k] =0;
+                }
+               
+            }
+        }
+          for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(matrix[i][j]==0){
+                    for(int k=0;k<m;k++) ans[k][j] =0;
+                }
+               
+            }
+        }
+        
+        
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                matrix[i][j] = ans[i][j];
+            }
+        }
+        
+    }
