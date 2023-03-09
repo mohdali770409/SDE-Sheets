@@ -1,0 +1,11 @@
+	//here if we found 0 increment counter and if the element is not 0 then fill the value from arr[i-count] to arr[i]
+  //after reaching to the end run another loop and fill total number of 0's from the last
+  void pushZerosToEnd(int arr[], int n) {
+	    
+	    int count=0;
+	    for(int i=0;i<n;i++){
+	        if(arr[i]==0) count++;
+	        else arr[i-count] = arr[i];
+	    }
+	    for(int i = n-count;i<n;i++) arr[i] =0;
+	}
