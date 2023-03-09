@@ -1,0 +1,14 @@
+	//approach:
+   //first reverse the array to 0 to k 
+   //then reverse the array to k to n 
+   //after reverse the whole array
+   //now we will get the answer
+  void leftRotate(int arr[], int k, int n) 
+	{ 
+	  //here modulus is taken because if then array size is 7 and we have to rotate times 7 to the left then if we perform modulus answer will be 0 it means we don't need to rotate it
+    
+	    k = k%n;
+	   reverse(arr,arr+k);
+	   reverse(arr+k,arr+n);
+	   reverse(arr,arr+n);
+	} 
