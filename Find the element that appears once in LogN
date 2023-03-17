@@ -1,0 +1,27 @@
+//logic is:
+//at even index first occurence is placed
+//at odd index second occurence is placed
+//if any of the above is not placed correctly means our single number is at back
+int search(int A[], int N){
+	   
+	    int start=0,end = N-1;
+	    while(start<=end){
+	        int mid = (start+end)/2;
+	        if(start==end) return A[start];
+          
+          //for even index
+          
+	        if(mid%2==0){
+	            if(A[mid]==A[mid+1]) start = mid+2;
+	            else end = mid;
+	        }
+          //for odd index
+          
+	        else{
+	            if(A[mid]==A[mid-1])start = mid+1;
+	            else end = mid-1; 
+	        }
+	        
+	    }
+	    
+	}
