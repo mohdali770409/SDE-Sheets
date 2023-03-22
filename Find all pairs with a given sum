@@ -1,0 +1,21 @@
+/* We store all first array elements in hash map.
+For elements of second array, we subtract every element from x and check the result in hash map.
+If result is present, we print the element and key in hash (which is an element of first array).
+*/
+
+vector<pair<int,int>> allPairs(int A[], int B[], int N, int M, int X)
+    {
+        
+        vector<pair<int,int>> ans;
+        map<int,int> hashMap;
+        for(int i=0;i<N;i++){
+            hashMap[A[i]]++;
+        }
+        for(int i=0;i<M;i++){
+            if(hashMap.find(X-B[i])!=hashMap.end()){
+                ans.push_back(make_pair(X-B[i],B[i]));
+            }
+        }
+        sort(ans.begin(),ans.end());
+        return ans;
+    }
