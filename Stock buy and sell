@@ -1,0 +1,46 @@
+/*1. Create two pointers low=0 and high=low. Create flag=0, to indicate the 'No Profit condition'.
+
+2. Iterate from high to n-1
+
+    Now, until next price > current price, increment high.
+
+3. If low!=high, means buy on same day and sell on same day,
+
+    set flag=1 to indicate we made Profit 
+
+    print (low high) 
+
+4. reset pointers as 
+
+    low=high+1;
+
+    high=low;
+
+5. After inner loop is complete, 
+
+    if flag==0, print('No Profit')
+
+    print('\n')
+   
+   */
+
+
+void stockBuySell(int price[], int n) {
+    // code here
+    int low=0,high=0;
+    bool flag= true;
+    while(high<n-1){
+        while(price[high+1]>price[high] && high<n-1){
+            high++;
+        }
+        if(low!=high){
+            cout<<'('<<low<<' '<<high<<')'<<' ';
+            flag=false;
+           
+        }
+         low = high+1;
+            high = low;
+    }
+    if(flag) cout<<"No Profit";
+    cout<<endl;
+}
